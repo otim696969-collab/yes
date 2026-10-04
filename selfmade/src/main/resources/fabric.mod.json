@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "selfmade",
+  "version": "${version}",
+  "name": "The Self Made Flesh",
+  "description": "Your identity is not something you possess - it is something the world can physically see. (Slice 0: the identity engine.)",
+  "authors": [ "You" ],
+  "license": "All-Rights-Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": [ "com.selfmade.SelfMade" ]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
