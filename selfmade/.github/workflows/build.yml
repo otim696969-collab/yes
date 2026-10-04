@@ -1,1 +1,33 @@
+name: build
 
+# Builds the mod jar in GitHub's cloud: no Java or Gradle needed on your computer.
+# Run it from the "Actions" tab with "Run workflow", or it runs automatically on every push.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 9.5.1
+
+      - name: Build
+        run: gradle build --no-daemon
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: selfmade-jar
+          path: |
+            build/libs/*.jar
+            !build/libs/*-sources.jar
