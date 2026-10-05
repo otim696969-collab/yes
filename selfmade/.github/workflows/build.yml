@@ -1,7 +1,5 @@
 name: build
 
-# Builds the mod jar in GitHub's cloud: no Java or Gradle needed on your computer.
-# Run it from the "Actions" tab with "Run workflow", or it runs automatically on every push.
 on:
   push:
   pull_request:
